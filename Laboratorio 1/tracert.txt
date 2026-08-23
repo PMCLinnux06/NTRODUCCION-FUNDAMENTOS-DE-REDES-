@@ -1,0 +1,30 @@
+Comando: tracert
+1. ¿Qué es y para qué sirve?
+Muestra la ruta exactas y los saltos (routers intermedios) que recorre la información desde tu computadora hasta llegar a un servidor de destino en Internet o en la red local.
+
+2. Variaciones del comando:
+tracert [IP o Dominio]: Trazado de ruta estándar (ejemplo: tracert google.com).
+
+tracert -d [IP]: Realiza el trazado sin traducir las direcciones IP a nombres de dominio (hace la prueba más rápida).
+
+tracert -h [MáximoSaltos]: Define el límite máximo de saltos que buscará antes de detenerse.
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Trazado a la dirección [Dominio / IP]:
+
+Qué es: Muestra el objetivo hacia donde se está midiendo la ruta.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Saltos (Líneas 1, 2, 3...):
+
+Qué es: El número de salto representa cada router o nodo intermediario en el camino. Los ms indican la latencia en 3 intentos.
+
+Confidencialidad: ⚠️ Sensible. Las primeras líneas pueden revelar IP internas de tu proveedor o de la red de tu empresa.
+
+🔴 Traza completa:
+
+Qué es: Confirmación de que el paquete llegó con éxito al servidor final.
+
+Confidencialidad: 🟢 No confidencial.

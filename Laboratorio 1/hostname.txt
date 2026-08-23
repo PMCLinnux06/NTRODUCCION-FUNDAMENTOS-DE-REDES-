@@ -1,0 +1,15 @@
+Comando 10: hostname
+1. ¿Qué es y para qué sirve?
+Muestra de forma rápida e inmediata el nombre de red asignado actualmente a tu computadora en Windows.
+
+2. Variaciones del comando:
+hostname: Es un comando simple, no suele requerir parámetros o modificadores adicionales.
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Nombre del equipo (Ejemplo: PmcLi-PC):
+
+Qué es: El nombre con el que tu computadora se identifica ante otros dispositivos dentro de un grupo de trabajo o dominio de red local.
+
+Confidencialidad: ⚠️ Ligeramente sensible / Confidencial en empresas. En computadoras personales no representa un riesgo grave, pero en redes corporativas revela la convención de nombres interna de la empresa (por ejemplo: NOMINAS-PC01).
+

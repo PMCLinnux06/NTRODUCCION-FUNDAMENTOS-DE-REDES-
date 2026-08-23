@@ -1,0 +1,34 @@
+Comando: arp -a
+1. ¿Qué es y para qué sirve?
+Muestra la tabla del protocolo ARP (Address Resolution Protocol), la cual vincula las direcciones IP locales con las direcciones físicas (MAC) de los dispositivos con los que te has comunicado en la red LAN.
+
+2. Variaciones del comando:
+arp -a: Lista las tablas ARP actuales de todas las interfaces.
+
+arp -d *: Borra la tabla ARP para forzar al sistema a aprender de nuevo las direcciones de la red (requiere permisos de Administrador).
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Interfaz:
+
+Qué es: Identifica la IP de tu propia tarjeta de red que está escaneando los demás equipos.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Dirección de Internet:
+
+Qué es: Las direcciones IP asignadas a otros equipos (impresoras, celulares, routers) dentro de tu misma red local.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Dirección física:
+
+Qué es: La dirección MAC de hardware única de cada dispositivo conectado a la red.
+
+Confidencialidad: 🚨 CONFIDENCIAL / SENSIBLE. Exponer direcciones MAC de equipos permite filtrados o ataques de suplantación (MAC Spoofing).
+
+🔴 Tipo (Dinámico / Estático):
+
+Qué es: Dinámico indica que la IP se asignó automáticamente por tráfico reciente; Estático indica una dirección fija grabada en el sistema.
+
+Confidencialidad: 🟢 No confidencial.

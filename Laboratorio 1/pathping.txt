@@ -1,0 +1,30 @@
+Comando 9: pathping
+1. ¿Qué es y para qué sirve?
+Es una combinación entre ping y tracert. Traza la ruta hasta un destino y luego calcula durante unos minutos la pérdida de paquetes y latencia en cada salto para detectar fallas exactas en la red.
+
+2. Variaciones del comando:
+pathping [IP o Dominio]: Ejecución estándar (ejemplo: pathping google.com).
+
+pathping -n [IP]: Muestra solo las direcciones IP sin intentar resolver nombres de dominio (hace la prueba más rápida).
+
+pathping -h [MáxSaltos]: Establece la cantidad máxima de saltos a analizar.
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Trazando una ruta a [Dominio / IP]:
+
+Qué es: Muestra el destino al cual se le medirá el rendimiento de la red.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Origen hasta aquí / Pérdida de paquetes (0/ 100 = 0%):
+
+Qué es: Muestra la calidad de la conexión en cada salto individual. Si aparece un porcentaje alto de pérdida en un nodo, indica que ese router específico tiene problemas.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 RTT (Round Trip Time):
+
+Qué es: El tiempo promedio en milisegundos que tarda la señal en ir y regresar desde ese punto.
+
+Confidencialidad: 🟢 No confidencial.

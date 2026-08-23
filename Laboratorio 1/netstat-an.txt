@@ -1,0 +1,42 @@
+Comando: netstat -an
+1. ¿Qué es y para qué sirve?
+Muestra un listado detallado de todas las conexiones de red activas, puertos abiertos y el estado de comunicación en la máquina.
+
+2. Variaciones del comando:
+netstat -an: Muestra todas las conexiones y puertos activos en formato numérico.
+
+netstat -ano: Agrega la columna PID (ID de proceso), permitiendo ver qué programa o virus exacto abrió esa conexión en la PC.
+
+netstat -e: Muestra estadísticas de los datos enviados y recibidos por la tarjeta de red.
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Encabezados (Proto / Dir. Local / Dir. Remota / Estado):
+
+Qué es: Columnas que organizan el tráfico.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Proto (Protocolo):
+
+Qué es: Muestra si la conexión utiliza TCP (transmisión orientada a conexión) o UDP (envío directo de paquetes).
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Dirección local:
+
+Qué es: La IP interna de tu computadora junto con el puerto que abrió la aplicación (ejemplo: :52134).
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Dirección remota:
+
+Qué es: La IP pública y el puerto del servidor externo en Internet al que estás conectado (ejemplo: :443 indica web HTTPS).
+
+Confidencialidad: ⚠️ Sensible. Muestra a qué páginas o servidores externos estás conectado activamente.
+
+🔴 Estado (LISTENING / ESTABLISHED):
+
+Qué es: LISTENING significa puerto abierto esperando conexiones. ESTABLISHED indica tráfico activo en ese instante.
+
+Confidencialidad: 🟢 No confidencial.

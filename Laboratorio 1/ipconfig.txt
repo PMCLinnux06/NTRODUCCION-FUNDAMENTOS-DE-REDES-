@@ -1,0 +1,82 @@
+Investigación del Comando: ipconfig
+1. ¿Qué es y para qué sirve?
+ipconfig (IP Configuration) es una herramienta de línea de comandos en Windows utilizada para visualizar los parámetros de red IP asignados al equipo y gestionar la liberación, renovación y limpieza de la configuración de red (DHCP y DNS).
+
+2. Variaciones del Comando (ipconfig con parámetros)
+ipconfig: Muestra la información básica de red de los adaptadores activos.
+
+ipconfig /all: Muestra el informe detallado de todos los adaptadores (incluye MAC, Servidores DNS, DHCP, etc.).
+
+ipconfig /release: Libera la dirección IP asignada actualmente por el servidor DHCP.
+
+ipconfig /renew: Solicita una nueva dirección IP al servidor DHCP.
+
+ipconfig /flushdns: Limpia la caché de resolución de nombres DNS.
+
+ipconfig /displaydns: Muestra los nombres de dominio guardados en la caché local DNS.
+
+3. 📺 Captura del CMD (Pantalla de ejecución)
+Plaintext
+C:\Users\PmcLi>ipconfig
+
+Configuración IP de Windows
+
+
+Adaptador de Ethernet Ethernet:
+
+   Sufijo DNS específico para la conexión. . :
+   Dirección IPv6. . . . . . . . . . . . . . : 2001:1308:247a:e300:3c80:470f:cf07:15ed
+   Dirección IPv6 temporal. . . . . . . . . . : 2001:1308:252b:8900::4
+   Vínculo: dirección IPv6 local. . . . . . . : fe80::3c80:470f:cf07:15ed%11
+   Dirección IPv4. . . . . . . . . . . . . . : 10.0.0.176
+   Máscara de subred . . . . . . . . . . . . : 255.255.255.0
+   Puerta de enlace predeterminada . . . . . : fe80::e6f0:4ff:fe83:b370%11
+                                               10.0.0.1
+4. 📝 Guía para Subrayar en la Imagen y Definición de Campos
+🔴 [Subrayar] Adaptador de Ethernet Ethernet:
+
+Qué es: Muestra la interfaz o tarjeta de red física por cable utilizada en la máquina.
+
+Confidencialidad: 🟢 No confidencial. Es un identificador del sistema local.
+
+🔴 [Subrayar] Sufijo DNS específico para la conexión:
+
+Qué es: Nombre del dominio asignado a tu red local por el proveedor (ISP) o router.
+
+Confidencialidad: ⚠️ Sensible. Puede revelar el nombre del dominio de una empresa.
+
+🔴 [Subrayar] Dirección IPv6:
+
+Qué es: La dirección IP pública única global en formato IPv6 para salir a Internet.
+
+Confidencialidad: 🚨 CONFIDENCIAL. Identifica de forma única a tu equipo en todo el planeta. Exponerla puede facilitar ataques directos.
+
+🔴 [Subrayar] Dirección IPv6 temporal:
+
+Qué es: Una dirección IPv6 secundaria rotativa que protege la privacidad del usuario al navegar.
+
+Confidencialidad: ⚠️ Sensible. Aunque cambia con frecuencia, expone tu tráfico activo.
+
+🔴 [Subrayar] Vínculo: dirección IPv6 local (Link-Local):
+
+Qué es: IP privada en formato IPv6 (suele empezar por fe80::) que solo sirve para que los equipos de una misma red local se comuniquen entre sí.
+
+Confidencialidad: 🟢 No confidencial. No es accesible a través de Internet.
+
+🔴 [Subrayar] Dirección IPv4:
+
+Qué es: Identificador numérico privado de tu computadora en la red de tu casa o trabajo (ejemplo: 10.0.0.176).
+
+Confidencialidad: 🟢 No confidencial / Bajo riesgo. Son direcciones privadas no enrutables en Internet.
+
+🔴 [Subrayar] Máscara de subred:
+
+Qué es: Código (255.255.255.0) que delimita el tamaño de la red local y separa la parte de red de la de los equipos.
+
+Confidencialidad: 🟢 No confidencial. Estándar universal.
+
+🔴 [Subrayar] Puerta de enlace predeterminada:
+
+Qué es: La dirección IP del router (10.0.0.1). Es la salida principal hacia Internet.
+
+Confidencialidad: 🟢 No confidencial.

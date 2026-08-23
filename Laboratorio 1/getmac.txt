@@ -1,0 +1,22 @@
+Comando: getmac
+1. ¿Qué es y para qué sirve?
+Muestra de forma rápida únicamente las direcciones físicas (MAC) de todas las tarjetas de red de tu equipo (Wi-Fi, Ethernet, adaptadores virtuales).
+
+2. Variaciones del comando:
+getmac: Muestra las direcciones MAC en formato de tabla simple.
+
+getmac /v: Muestra un informe detallado con los nombres exactos de los adaptadores de red.
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Dirección física:
+
+Qué es: La dirección MAC grabada de fábrica en la tarjeta de red del equipo.
+
+Confidencialidad: 🚨 CONFIDENCIAL. Es el identificador de hardware único de tu laptop o PC. Debe ocultarse en informes públicos.
+
+🔴 Nombre de transporte:
+
+Qué es: El código identificador que usa el sistema operativo Windows para vincular esa tarjeta al protocolo TCP/IP.
+
+Confidencialidad: 🟢 No confidencial.

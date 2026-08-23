@@ -1,0 +1,30 @@
+Comando: nslookup
+1. ¿Qué es y para qué sirve?
+Consulta a los servidores DNS para resolver y verificar la dirección IP que corresponde a un nombre de dominio o viceversa.
+
+2. Variaciones del comando:
+nslookup [Dominio]: Consulta simple para obtener la IP de un sitio web.
+
+nslookup [Dirección IP]: Realiza una búsqueda inversa para saber qué dominio le pertenece a esa IP.
+
+nslookup (solo): Entra al modo interactivo para hacer múltiples consultas continuas.
+
+
+4. 📝 Desglose de lo subrayado y Confidencialidad:
+🔴 Servidor / Address (Sección Superior):
+
+Qué es: Es la dirección IP de tu servidor DNS local (habitualmente tu router o servidor DNS asignado).
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Respuesta no autoritativa:
+
+Qué es: Indica que la respuesta proviene de la memoria caché guardada en el servidor DNS y no directamente del servidor DNS raíz de la web.
+
+Confidencialidad: 🟢 No confidencial.
+
+🔴 Nombre y Addresses (Sección Inferior):
+
+Qué es: El nombre de la página web consultada y la IP pública real donde está alojada en Internet.
+
+Confidencialidad: 🟢 No confidencial.
