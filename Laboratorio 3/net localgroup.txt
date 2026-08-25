@@ -1,0 +1,35 @@
+===============================================================================
+1. COMANDO: net localgroup
+===============================================================================
+
+1.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Lista todos los grupos de seguridad locales existentes en el servidor o estación de trabajo local. Permite obtener una visión general de la estructura de grupos creados por el sistema operativo y por los administradores para la asignación de privilegios.
+
+1.2. SINTAXIS EXACTA:
+net localgroup
+
+1.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup                                          |
+|                                                                             |
+| Cuentas de grupo local para \\PMCLINNUX06                                   |
+|                                                                             |
+| --------------------------------------------------------------------------- |
+| *Administradores                                                            |
+| *Duplicadores de copia de seguridad                                         |
+| *Lectores de diarios de eventos                                             |
+| *Operadores de asistencia de control remoto                                 |
+| *Usuarios                                                                   |
+| *Usuarios del escritorio remoto                                             |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+1.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* net localgroup: Ejecutable de administración de cuentas de grupos locales de Windows.
+* Cuentas de grupo local para \\PMCLINNUX06: Muestra el nombre del equipo local donde se está ejecutando la consulta.
+* Asterisco (*): Prefijo nativo que indica que cada entrada listada corresponde a un grupo local de seguridad.
+
+1.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial Medio.
+* Razón de Ciberseguridad: Utilizado durante el reconocimiento interno en post-explotación. Permite a un atacante auditar los grupos de acceso especial (ej. Escritorio remoto, Administradores) para identificar posibles objetivos de escalada de privilegios o persistencia.

@@ -1,0 +1,32 @@
+===============================================================================
+5. COMANDO: netstat -ano
+===============================================================================
+
+5.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Inspecciona y monitorea el estado en tiempo real de todos los sockets de red abiertos en la máquina. Muestra las tablas de conexiones activas (TCP) e interfaces escuchando (UDP), relacionando las direcciones IP/puertos locales y remotos directamente con el Identificador de Proceso (PID) en el sistema operativo.
+
+5.2. SINTAXIS EXACTA:
+netstat -ano
+
+5.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>netstat -ano                                                 |
+|                                                                             |
+| Conexiones activas                                                          |
+|   Proto  Dirección local          Dirección remota        Estado       PID  |
+|   TCP    192.168.1.15:52311       142.250.190.46:443      ESTABLISHED  4812 |
+|   TCP    0.0.0.0:135              0.0.0.0:0              LISTENING    940  |
+|   UDP    0.0.0.0:5353             *:*                                 1120 |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+5.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* -a: Lista absolutamente todos los puertos en estado LISTENING y conexiones activas.
+* -n: Muestra los valores numéricamente sin resolver nombres de puertos ni hosts.
+* -o: Adjunta la columna PID para hacer correlación de procesos en el Administrador de Tareas.
+* ESTABLISHED / LISTENING: Estados del handshake de tres vías TCP.
+
+5.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Altamente Confidencial / Crítico.
+* Razón de Ciberseguridad: Herramienta clave en la respuesta a incidentes forenses. Permite descubrir puertas traseras (Backdoors), comunicaciones salientes no autorizadas hacia servidores de Comando y Control (C2) y binarios maliciosos ejecutándose en background.

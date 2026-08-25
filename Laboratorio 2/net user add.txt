@@ -1,0 +1,37 @@
+===============================================================================
+3. COMANDO: net user [Usuario] [Contraseña] /add
+===============================================================================
+
+3.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Sirve para crear de forma inmediata una nueva cuenta de usuario local dentro del sistema operativo, asignándole un identificador y una contraseña inicial en el momento de la creación.
+
+3.2. SINTAXIS EXACTA:
+net user Juan Clave123 /add
+
+3.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Juan Clave123 /add                             |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+3.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* C:\Windows\system32>:
+  - Muestra que el comando requirió permisos de Administrador elevado para ser ejecutado (CMD abierto desde `system32`).
+
+* Juan:
+  - Es el parámetro que define el nombre de usuario (Username/SAM Account Name) que identificará a la nueva cuenta en el sistema.
+
+* Clave123:
+  - Es la contraseña asignada inicialmente en la creación del usuario.
+
+* /add:
+  - Modificador (Switch) obligatorio que le indica a la herramienta `net` que la operación a realizar es la adición de una nueva cuenta en la base SAM.
+
+* Se ha completado el comando correctamente:
+  - Mensaje de éxito que indica que la cuenta fue creada en la base SAM y el directorio de usuario correspondiente será inicializado en el primer inicio de sesión.
+
+3.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: CONFIDENCIAL / CRÍTICO.
+* Razón de Ciberseguridad: Al ingresar la contraseña explícitamente en la línea de comandos (`Clave123`), la clave queda registrada en texto plano dentro del historial de la consola, en los logs de eventos del sistema (Event ID 4688) y visible para cualquier persona que observe la pantalla. En reportes de seguridad, este parámetro debe ser redactado o tachado obligatoriamente.

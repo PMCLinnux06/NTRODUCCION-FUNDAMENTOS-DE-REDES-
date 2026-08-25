@@ -1,15 +1,26 @@
-Comando 10: hostname
-1. ¿Qué es y para qué sirve?
-Muestra de forma rápida e inmediata el nombre de red asignado actualmente a tu computadora en Windows.
+===============================================================================
+10. COMANDO: hostname
+===============================================================================
 
-2. Variaciones del comando:
-hostname: Es un comando simple, no suele requerir parámetros o modificadores adicionales.
+10.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Muestra de manera directa y sin modificadores el nombre NetBIOS o FQDN registrado para el equipo en la base de datos del sistema operativo.
 
+10.2. SINTAXIS EXACTA:
+hostname
 
-4. 📝 Desglose de lo subrayado y Confidencialidad:
-🔴 Nombre del equipo (Ejemplo: PmcLi-PC):
+10.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>hostname                                                     |
+|                                                                             |
+| PMCLINNUX06                                                                 |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
 
-Qué es: El nombre con el que tu computadora se identifica ante otros dispositivos dentro de un grupo de trabajo o dominio de red local.
+10.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* hostname: Aplicación nativa de lectura de la variable de entorno %COMPUTERNAME%.
+* PMCLINNUX06: Cadena alfanumérica que identifica de manera única a la estación de trabajo dentro de la red de área local o dominio de Active Directory.
 
-Confidencialidad: ⚠️ Ligeramente sensible / Confidencial en empresas. En computadoras personales no representa un riesgo grave, pero en redes corporativas revela la convención de nombres interna de la empresa (por ejemplo: NOMINAS-PC01).
-
+10.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.
+* Razón de Ciberseguridad: Es utilizado de forma automatizada por scripts maliciosos y Ransomware en la fase de reconocimiento inicial para determinar si la máquina pertenece a una víctima corporativa de alto valor o a un entorno controlado de Sandbox (Sandbox Evasion).

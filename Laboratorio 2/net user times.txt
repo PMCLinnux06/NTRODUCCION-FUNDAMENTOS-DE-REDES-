@@ -1,0 +1,33 @@
+===============================================================================
+6. COMANDO: net user [Usuario] /times:[Horario]
+===============================================================================
+
+6.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Sirve para establecer o modificar las restricciones de horario en los cuales un usuario tiene permitido iniciar sesión en el equipo. Fuera del rango definido, Windows denegará la autenticación.
+
+6.2. SINTAXIS EXACTA:
+net user Juan /times:L-V,08:00-17:00
+
+6.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Juan /times:L-V,08:00-17:00                    |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+6.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* Juan:
+  - Cuenta objetivo sobre la cual se aplicará la restricción de acceso.
+
+* /times:L-V,08:00-17:00:
+  - Modificador de parámetro temporal:
+    - `L-V`: Define los días permitidos (Lunes a Viernes).
+    - `08:00-17:00`: Define el rango de horas permitidas en formato de 24 horas (8:00 AM a 5:00 PM).
+
+* Se ha completado el comando correctamente:
+  - Confirma que la directiva de restricción de horario fue grabada en las propiedades del perfil del usuario.
+
+6.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.
+* Razón de Ciberseguridad: Aplica el principio de mínimo privilegio y control de acceso temporal, reduciendo la ventana de oportunidad para ataques fuera de la jornada laboral.

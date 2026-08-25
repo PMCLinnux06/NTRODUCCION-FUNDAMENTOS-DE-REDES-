@@ -1,0 +1,54 @@
+===============================================================================
+1. COMANDO BASE: net user
+===============================================================================
+
+1.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+El comando `net user` es una herramienta nativa de la consola de comandos de Windows (CMD) utilizada por administradores de sistemas y analistas de ciberseguridad para listar, consultar e宿inspeccionar todas las cuentas de usuario locales registradas en la base de datos de seguridad local (SAM - Security Account Manager) del equipo.
+
+En entornos de auditoría y ciberseguridad, este comando es fundamental para la fase de reconocimiento e inventario. Permite identificar de manera rápida cuentas activas, cuentas predeterminadas de Windows, cuentas de servicio y posibles cuentas sospechosas u ocultas creadas por malware o un atacante.
+
+1.2. SINTAXIS EXACTA:
+net user
+
+1.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>net user                                                     |
+|                                                                             |
+| Cuentas de usuario de \\PmcLi-PC                                             |
+|                                                                             |
+| --------------------------------------------------------------------------- |
+| Administrador            Invitado                 PmcLi                     |
+| WDAGUtilityAccount                                                          |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+1.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* Cuentas de usuario de \\PmcLi-PC:
+  - ¿Qué es?: Indica el nombre de la máquina o Hostname local sobre la cual se está ejecutando la consulta (`PmcLi-PC`).
+  - Para qué sirve: Confirma que la auditoría de usuarios se está realizando sobre el sistema local y no sobre un dominio de Active Directory remoto.
+
+* Administrador (Administrator):
+  - ¿Qué es?: Cuenta integrada (Built-in) del sistema operativo Windows con el Nivel de Privilegio Máximo (RID 500).
+  - Para qué sirve: Permite realizar modificaciones globales en el sistema operativo, instalar software a nivel de kernel, gestionar directivas de seguridad y administrar la base SAM.
+  - Relevancia en seguridad: Es la cuenta objetivo primaria en ataques de escalada de privilegios y fuerza bruta.
+
+* Invitado (Guest):
+  - ¿Qué es?: Cuenta integrada con privilegios mínimos (RID 501), diseñada para acceso público o temporal sin credenciales persistentes.
+  - Para qué sirve: Permitir que personas externas usen el equipo sin tener acceso a archivos privados ni configuraciones del sistema. Por defecto en Windows moderno viene deshabilitada por motivos de seguridad.
+
+* PmcLi:
+  - ¿Qué es?: Cuenta de usuario interactiva creada durante o después de la instalación de Windows.
+  - Para qué sirve: Identificar al usuario principal del equipo (`PmcLi`) para el inicio de sesión diario, gestión de archivos en `C:\Users\PmcLi` y ejecución de aplicaciones.
+
+* WDAGUtilityAccount:
+  - ¿Qué es?: Cuenta local administrada y utilizada de forma automática por la característica Windows Defender Application Guard (WDAG).
+  - Para qué sirve: Ejecutar páginas web en Edge o documentos de Office dentro de un entorno aislado de espacio virtualizado (Sandbox) para evitar infecciones por malware.
+
+* Se ha completado el comando correctamente:
+  - ¿Qué es?: Mensaje de confirmación del intérprete de comandos (`ErrorLevel 0`).
+  - Para qué sirve: Confirma que la consulta a la base de datos local de cuentas finalizó de manera exitosa sin errores de sintaxis ni de permisos.
+
+1.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Sensible / Confidencial en auditorías.
+* Razón de Ciberseguridad: La información expuesta mediante este comando facilita la técnica de "User Enumeration" (Enumeración de Cuentas). Un atacante que logra acceso inicial utiliza esta lista para orientar ataques de fuerza bruta o de pulverización de contraseñas (Password Spraying) contra usuarios específicos.

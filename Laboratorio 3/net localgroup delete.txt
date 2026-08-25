@@ -1,0 +1,24 @@
+===============================================================================
+4. COMANDO: net localgroup <grupo> /delete
+===============================================================================
+
+4.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Elimina permanentemente un grupo local de seguridad de la base de datos SAM local. No borra las cuentas de usuario contenidas en él, solo el contenedor y sus permisos de grupo asignados.
+
+4.2. SINTAXIS EXACTA:
+net localgroup Auditores /delete
+
+4.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup Auditores /delete                        |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+4.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* <grupo>: Nombre del grupo objetivo a ser removido.
+* /delete: Parámetro que ejecuta el borrado definitivo de la entidad de grupo local.
+
+4.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Crítico / Impacto en la Disponibilidad.
+* Razón de Ciberseguridad: Puede ser utilizado en ataques de denegación de servicio interno (DoS) para remover grupos legítimos de la empresa, revocando accesos y bloqueando servicios operativos.

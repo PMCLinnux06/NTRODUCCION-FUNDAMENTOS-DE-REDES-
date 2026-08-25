@@ -1,0 +1,31 @@
+===============================================================================
+7. COMANDO: net user [Usuario] /active:yes
+===============================================================================
+
+7.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Habilita y reactiva una cuenta de usuario local que previamente se encontraba inactiva, bloqueada o deshabilitada.
+
+7.2. SINTAXIS EXACTA:
+net user Invitado /active:yes
+
+7.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Invitado /active:yes                           |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+7.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* Invitado:
+  - Nombre de la cuenta objetivo que se desea habilitar.
+
+* /active:yes:
+  - Modificador que cambia el estado del flag de la cuenta a `Habilitado (Enabled)`.
+
+* Se ha completado el comando correctamente:
+  - Confirma que el perfil ahora permite la autenticación de usuarios.
+
+7.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Sensible.
+* Razón de Ciberseguridad: Reactivar cuentas del sistema por defecto (como Invitado o Administrador) incrementa la superficie de ataque si no están adecuadamente protegidas con contraseñas robustas.

@@ -1,22 +1,30 @@
-Comando: getmac
-1. ¿Qué es y para qué sirve?
-Muestra de forma rápida únicamente las direcciones físicas (MAC) de todas las tarjetas de red de tu equipo (Wi-Fi, Ethernet, adaptadores virtuales).
+===============================================================================
+7. COMANDO: getmac /v
+===============================================================================
 
-2. Variaciones del comando:
-getmac: Muestra las direcciones MAC en formato de tabla simple.
+7.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Consulta directamente la capa de abstracción de red para obtener las direcciones MAC (Media Access Control) de todas las tarjetas de red habilitadas en el equipo, junto con el nombre oficial del hardware asociado.
 
-getmac /v: Muestra un informe detallado con los nombres exactos de los adaptadores de red.
+7.2. SINTAXIS EXACTA:
+getmac /v
 
+7.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>getmac /v                                                    |
+|                                                                             |
+| Nombre de conexión  Nombre de adaptador   Dirección física                  |
+| ==================  ====================  ===================               |
+| Wi-Fi               Realtek Wi-Fi Adapter C4-65-16-XX-XX-XX                 |
+| Conexión local      Ethernet Controller   00-15-5D-01-02-03                 |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
 
-4. 📝 Desglose de lo subrayado y Confidencialidad:
-🔴 Dirección física:
+7.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* getmac: Ejecutable del sistema para extracción del identificador físico de red.
+* /v: Parámetro de detalle extendido (verbose) que correlaciona la interfaz lógica con la descripción del fabricante del hardware.
+* Dirección física: Código hexatridecimal de 6 bytes separado por guiones.
 
-Qué es: La dirección MAC grabada de fábrica en la tarjeta de red del equipo.
-
-Confidencialidad: 🚨 CONFIDENCIAL. Es el identificador de hardware único de tu laptop o PC. Debe ocultarse en informes públicos.
-
-🔴 Nombre de transporte:
-
-Qué es: El código identificador que usa el sistema operativo Windows para vincular esa tarjeta al protocolo TCP/IP.
-
-Confidencialidad: 🟢 No confidencial.
+7.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial Bajo.
+* Razón de Ciberseguridad: Esencial en políticas de control de acceso a redes basadas en hardware (Port Security / 802.1X). Sin embargo, la dirección MAC se transmite en texto claro en tramas Ethernet y puede ser suplantada mediante MAC Spoofing.

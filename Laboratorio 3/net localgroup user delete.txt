@@ -1,0 +1,25 @@
+===============================================================================
+6. COMANDO: net localgroup <grupo> <usuario> /delete
+===============================================================================
+
+6.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Remueve a una cuenta de usuario de un grupo local específico, revocándole de forma inmediata los derechos y permisos heredados de dicho grupo.
+
+6.2. SINTAXIS EXACTA:
+net localgroup Administradores Juan /delete
+
+6.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup Administradores Juan /delete            |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+6.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* <grupo>: El grupo local desde el cual se desvinculará la cuenta.
+* <usuario>: Cuenta de usuario a ser removida del grupo.
+* /delete: Parámetro que quita la membrecía especificada.
+
+5.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial Medio / Gestión de Seguridad.
+* Razón de Ciberseguridad: Acción fundamental de remediación en respuesta a incidentes para despojar de accesos a cuentas comprometidas o dar de baja privilegios no autorizados.

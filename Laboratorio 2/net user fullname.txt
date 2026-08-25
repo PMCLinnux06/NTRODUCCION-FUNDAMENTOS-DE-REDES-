@@ -1,0 +1,25 @@
+===============================================================================
+9. COMANDO: net user [Usuario] /fullname:"[Nombre Real]"
+===============================================================================
+
+9.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Asigna o modifica el nombre completo del usuario que se muestra en la pantalla de inicio de sesión de Windows y en las herramientas de interfaz gráfica.
+
+9.2. SINTAXIS EXACTA:
+net user PmcLi /fullname:"Pedro Contreras"
+
+9.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user PmcLi /fullname:"Pedro Contreras"              |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+9.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* /fullname:"Pedro Contreras":
+  - Asigna la cadena de texto como la identidad completa del titular de la cuenta.
+
+9.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Sensible (PII - Información de Identificación Personal).
+* Razón de Ciberseguridad: Asocia una cuenta lógica con un individuo real, lo cual debe gestionarse con cuidado bajo normativas de privacidad de datos.

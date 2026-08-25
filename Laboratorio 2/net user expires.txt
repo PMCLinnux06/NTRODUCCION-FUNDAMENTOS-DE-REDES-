@@ -1,0 +1,24 @@
+===============================================================================
+13. COMANDO: net user [Usuario] /expires:[Fecha]
+===============================================================================
+
+13.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Establece una fecha exacta en la cual la cuenta de usuario se deshabilitará de forma automática.
+
+13.2. SINTAXIS EXACTA:
+net user Juan /expires:31/12/2026
+
+13.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Juan /expires:31/12/2026                       |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+13.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* /expires:31/12/2026:
+  - Fija el límite temporal (DD/MM/AAAA) de vigencia de la cuenta.
+
+13.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.

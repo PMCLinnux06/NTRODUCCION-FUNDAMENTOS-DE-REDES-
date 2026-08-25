@@ -1,0 +1,31 @@
+===============================================================================
+4. COMANDO: net user [Usuario] /delete
+===============================================================================
+
+4.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Sirve para eliminar permanentemente una cuenta de usuario local del sistema operativo. Remueve las entradas de la cuenta en la base de datos SAM y revoca todas las autorizaciones asociadas a su SID (Security Identifier).
+
+4.2. SINTAXIS EXACTA:
+net user Juan /delete
+
+4.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Juan /delete                                  |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+4.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* Juan:
+  - Nombre exacto de la cuenta de usuario que se desea remover del sistema.
+
+* /delete:
+  - Modificador que ordena la eliminación inmediata del objeto de usuario seleccionado.
+
+* Se ha completado el comando correctamente:
+  - Confirmación de que el SID de la cuenta fue eliminado de la base SAM. (Nota: Los archivos personales en `C:\Users\Juan` pueden requerir eliminación manual separada).
+
+4.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.
+* Razón de Ciberseguridad: Confirmación operativa. Es una acción irreversible que revoca accesos, útil en la remediación tras detectar cuentas no autorizadas o finalizar la relación laboral de un empleado.

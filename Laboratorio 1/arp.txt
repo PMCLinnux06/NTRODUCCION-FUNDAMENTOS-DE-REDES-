@@ -1,0 +1,32 @@
+===============================================================================
+6. COMANDO: arp -a
+===============================================================================
+
+6.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Despliega la tabla de caché del protocolo ARP (Address Resolution Protocol), la cual mantiene el mapeo estático y dinámico entre las direcciones de capa lógica (IPv4) y las direcciones de capa física (MAC Address) utilizadas para la transmisión de tramas en la red local.
+
+6.2. SINTAXIS EXACTA:
+arp -a
+
+6.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>arp -a                                                       |
+|                                                                             |
+| Interfaz: 192.168.1.15 --- 0x3                                              |
+|   Dirección Internet      Dirección física      Tipo                        |
+|   192.168.1.1             ec-aa-25-8f-10-b2     dinámico                    |
+|   192.168.1.255           ff-ff-ff-ff-ff-ff     estático                    |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+6.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* arp: Comando de inspección del protocolo de resolución de direcciones de Capa 2/3.
+* -a: Parámetro que solicita volcar el contenido completo de la tabla de la memoria RAM.
+* Dirección Internet: La IP lógica del dispositivo dentro del mismo segmento de broadcast.
+* Dirección física: La MAC Address correspondiente aprendida por solicitudes de broadcast.
+* Tipo (dinámico/estático): Indica si la entrada fue aprendida por negociación o introducida manualmente.
+
+6.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial Medio.
+* Razón de Ciberseguridad: Permite auditar y detectar ataques de envenenamiento de caché ARP (ARP Poisoning / ARP Spoofing). Si la dirección MAC del gateway cambia repentinamente o se duplica entre varias IPs, indica la presencia de un ataque Man-in-the-Middle pasivo o activo.
