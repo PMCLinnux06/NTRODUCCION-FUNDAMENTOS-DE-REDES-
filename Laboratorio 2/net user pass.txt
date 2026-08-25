@@ -1,0 +1,31 @@
+===============================================================================
+5. COMANDO: net user [Usuario] [NuevaContraseña]
+===============================================================================
+
+5.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Permite a un administrador del sistema forzar el restablecimiento o cambio inmediato de la contraseña de cualquier cuenta de usuario local, sin necesidad de conocer la contraseña anterior.
+
+5.2. SINTAXIS EXACTA:
+net user PmcLi NuevaClave2026
+
+5.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user PmcLi NuevaClave2026                           |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+5.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* PmcLi:
+  - Nombre de la cuenta objetivo cuya contraseña se está modificando.
+
+* NuevaClave2026:
+  - Texto plano de la nueva clave de acceso que sustituye al hash de la contraseña anterior en la base de datos de seguridad.
+
+* Se ha completado el comando correctamente:
+  - Notificación de que el hash NTLM de la cuenta fue actualizado exitosamente.
+
+5.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: CONFIDENCIAL Y CRÍTICO.
+* Razón de Ciberseguridad: Al igual que al crear cuentas, el envío de contraseñas visibles en la consola compromete la seguridad por exposición en memoria, logs de comandos e inspección visual. La contraseña expuesta debe ser protegida/ocultada en cualquier evidencia documental.

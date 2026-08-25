@@ -1,53 +1,38 @@
-Comando: ping
-1. ¿Qué es y para qué sirve?
-Es una herramienta de diagnóstico que envía paquetes de prueba (ICMP) a una dirección IP o dominio para verificar si está activo, si responde y cuánta latencia hay en la conexión.
+===============================================================================
+2. COMANDO: ping [destino]
+===============================================================================
 
-2. Variaciones del comando:
-ping [IP o Dominio]: Prueba básica enviando 4 paquetes (ejemplo: ping google.com o ping 10.0.0.1).
+2.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Evalúa la alcanzabilidad y disponibilidad de un host remoto en la red enviando paquetes ICMP (Internet Control Message Protocol) del tipo Echo Request (Tipo 8). Permite medir la latencia del canal en milisegundos y determinar la tasa de pérdida de paquetes.
 
-ping -t [IP]: Hace un ping continuo sin detenerse hasta que presiones Ctrl + C.
+2.2. SINTAXIS EXACTA:
+ping google.com -n 4
 
-ping -n [Número] [IP]: Envía una cantidad específica de paquetes en lugar de los 4 por defecto.
+2.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>ping google.com -n 4                                         |
+|                                                                             |
+| Haciendo ping a google.com [142.250.190.46] con 32 bytes de datos:          |
+| Respuesta desde 142.250.190.46: bytes=32 tiempo=18ms TTL=117               |
+| Respuesta desde 142.250.190.46: bytes=32 tiempo=19ms TTL=117               |
+| Respuesta desde 142.250.190.46: bytes=32 tiempo=17ms TTL=117               |
+| Respuesta desde 142.250.190.46: bytes=32 tiempo=18ms TTL=117               |
+|                                                                             |
+| Estadísticas de ping para 142.250.190.46:                                   |
+|     Paquetes: enviados = 4, recibidos = 4, perdidos = 0 (0% perdidos),      |
+| Tiempos aproximados de ida y vuelta en milisegundos:                        |
+|     Mínimo = 17ms, Máximo = 19ms, Media = 18ms                              |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
 
-ping -l [Tamaño] [IP]: Cambia el tamaño de los datos de prueba enviados (en bytes).
+2.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* ping: Herramienta de diagnóstico de conectividad de capa 3.
+* -n 4: Modificador que restringe la prueba a un conteo estricto de 4 peticiones de eco.
+* bytes=32: Tamaño del payload útil de prueba inyectado en la trama de red.
+* tiempo=18ms: Round Trip Time (RTT), el tiempo exacto transcurrido entre la salida de la petición y la recepción de la respuesta.
+* TTL=117: Time To Live. Contador de saltos decreciente que previene que los paquetes circulen indefinidamente en bucles de enrutamiento.
 
-3. 📺 Pantalla del CMD 
-Plaintext
-C:\Users\PmcLi>ping google.com
-
- Haciendo ping a google.com [142.250.190.46] con 32 bytes de datos:
-] Respuesta desde 142.250.190.46: bytes=32 tiempo=24ms TTL=117
-   Respuesta desde 142.250.190.46: bytes=32 tiempo=22ms TTL=117
-   Respuesta desde 142.250.190.46: bytes=32 tiempo=25ms TTL=117
-   Respuesta desde 142.250.190.46: bytes=32 tiempo=23ms TTL=117
-
-Estadísticas de ping para 142.250.190.46:
-] Paquetes: enviados = 4, recibidos = 4, perdidos = 0 (0% perdidos),
-Tiempos aproximados de ida y vuelta en milisegundos:
- Mínimo = 22ms, Máximo = 25ms, Media = 23ms
- 
-4. 📝 Desglose de lo subrayado y Confidencialidad:
-🔴 Haciendo ping a google.com [IP] con 32 bytes de datos:
-
-Qué es: Indica el destino consultado, la IP a la que se tradujo el nombre y el tamaño del paquete enviado.
-
-Confidencialidad: 🟢 No confidencial (si es un sitio web público o IP local) / 🚨 Confidencial (si es la IP pública privada de un servidor personal o cliente).
-
-🔴 Respuesta desde [IP] : bytes=32 tiempo=24ms TTL=117:
-
-Qué es: Muestra la velocidad de respuesta en milisegundos (tiempo) y el contador de vida del paquete (TTL).
-
-Confidencialidad: 🟢 No confidencial.
-
-🔴 Paquetes: enviados = 4, recibidos = 4, perdidos = 0:
-
-Qué es: Resumen que indica si la señal está estable o si hay pérdida de datos.
-
-Confidencialidad: 🟢 No confidencial.
-
-🔴 Mínimo = 22ms, Máximo = 25ms, Media = 23ms:
-
-Qué es: Promedio de latencia de la red.
-
-Confidencialidad: 🟢 No confidencial.
-
+2.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.
+* Razón de Ciberseguridad: Es el primer método utilizado en barridos de red (Ping Sweeps) para enumerar activos vivos. Además, los valores TTL permiten deducir el sistema operativo objetivo (ej. Linux suele responder con TTL 64, Windows con TTL 128).

@@ -1,0 +1,25 @@
+===============================================================================
+8. COMANDO: net user [Usuario] /active:no
+===============================================================================
+
+8.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Deshabilita y bloquea el acceso de una cuenta de usuario sin eliminar sus archivos, carpetas ni configuraciones del sistema.
+
+8.2. SINTAXIS EXACTA:
+net user Invitado /active:no
+
+8.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Invitado /active:no                            |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+8.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* /active:no:
+  - Modificador que cambia la bandera de la cuenta en la SAM a `Deshabilitado (Disabled)`.
+
+8.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.
+* Razón de Ciberseguridad: Es una buena práctica fundamental de System Hardening (bastionado de sistemas) para neutralizar cuentas en desuso o sospechosas sin perder la evidencia forense de sus archivos.

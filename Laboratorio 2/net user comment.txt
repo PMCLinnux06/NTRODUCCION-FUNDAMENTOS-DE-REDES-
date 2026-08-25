@@ -1,0 +1,24 @@
+===============================================================================
+10. COMANDO: net user [Usuario] /comment:"[Texto]"
+===============================================================================
+
+10.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Permite añadir una descripción o nota explicativa en las propiedades de la cuenta de usuario.
+
+10.2. SINTAXIS EXACTA:
+net user Juan /comment:"Usuario para transporte nocturno"
+
+10.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Juan /comment:"Usuario para transporte nocturno" |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+10.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* /comment:"...":
+  - Guarda la anotación explicativa dentro de los metadatos de la cuenta SAM.
+
+10.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.

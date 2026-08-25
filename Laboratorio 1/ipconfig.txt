@@ -1,82 +1,50 @@
-Investigación del Comando: ipconfig
-1. ¿Qué es y para qué sirve?
-ipconfig (IP Configuration) es una herramienta de línea de comandos en Windows utilizada para visualizar los parámetros de red IP asignados al equipo y gestionar la liberación, renovación y limpieza de la configuración de red (DHCP y DNS).
+===============================================================================
+1. COMANDO: ipconfig /all
+===============================================================================
 
-2. Variaciones del Comando (ipconfig con parámetros)
-ipconfig: Muestra la información básica de red de los adaptadores activos.
+1.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Muestra la configuración TCP/IP completa y detallada de todas las interfaces de red (físicas, inalámbricas y adaptadores virtuales/VPN) presentes en la máquina. Revela parámetros críticos como direcciones MAC, direcciones IPv4/IPv6 asignadas, estado del cliente DHCP, tiempos de arrendamiento de IP y la jerarquía de servidores DNS locales y públicos.
 
-ipconfig /all: Muestra el informe detallado de todos los adaptadores (incluye MAC, Servidores DNS, DHCP, etc.).
+1.2. SINTAXIS EXACTA:
+ipconfig /all
 
-ipconfig /release: Libera la dirección IP asignada actualmente por el servidor DHCP.
+1.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>ipconfig /all                                                |
+|                                                                             |
+| Configuración IP de Windows                                                 |
+|                                                                             |
+|    Nombre del host . . . . . . . . . . . . . : PMCLINNUX06                  |
+|    Sufijo DNS principal . . . . . . . . . . :                               |
+|    Tipo de nodo . . . . . . . . . . . . . . : Híbrido                       |
+|    Enrutamiento IP habilitado. . . . . . . . : No                           |
+|    Proxy WINS habilitado. . . . . . . . . . : No                           |
+|                                                                             |
+| Adaptador de LAN inalámbrica Wi-Fi:                                         |
+|                                                                             |
+|    Sufijo DNS específico para la conexión. . :                               |
+|    Descripción . . . . . . . . . . . . . . . : Realtek Wi-Fi Adapter        |
+|    Dirección física. . . . . . . . . . . . . : C4-65-16-XX-XX-XX             |
+|    DHCP habilitado . . . . . . . . . . . . . : Sí                            |
+|    Dirección IPv4. . . . . . . . . . . . . . : 192.168.1.15(Preferido)       |
+|    Máscara de subred . . . . . . . . . . . . : 255.255.255.0                |
+|    Concesión obtenida. . . . . . . . . . . . : 24/08/2026 14:00:00           |
+|    La concesión expira . . . . . . . . . . . : 25/08/2026 14:00:00           |
+|    Puerta de enlace predeterminada . . . . . : 192.168.1.1                  |
+|    Servidor DHCP . . . . . . . . . . . . . . : 192.168.1.1                  |
+|    Servidores DNS . . . . . . . . . . . . . : 8.8.8.8                       |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
 
-ipconfig /renew: Solicita una nueva dirección IP al servidor DHCP.
+1.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* ipconfig: Comando base ejecutable encargado de consultar las variables del stack TCP/IP en el kernel de Windows.
+* /all: Parámetro de extensión que fuerza al comando a leer el registro profundo de red (HKLM\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters).
+* Dirección física (MAC): Identificador único de 48 bits grabado en la EEPROM de la NIC (Capa 2 del modelo OSI).
+* Dirección IPv4: Dirección lógica de 32 bits asignada al equipo para la comunicación en capa de red (Capa 3 OSI).
+* Puerta de enlace predeterminada: IP del enrutador o Gateway hacia el cual se redirigen los paquetes cuya red destino es desconocida localmente.
+* Servidores DNS: IPs de las entidades encargadas de resolver nombres FQDN a direcciones IP asociadas.
 
-ipconfig /flushdns: Limpia la caché de resolución de nombres DNS.
-
-ipconfig /displaydns: Muestra los nombres de dominio guardados en la caché local DNS.
-
-3. 📺 Captura del CMD (Pantalla de ejecución)
-Plaintext
-C:\Users\PmcLi>ipconfig
-
-Configuración IP de Windows
-
-
-Adaptador de Ethernet Ethernet:
-
-   Sufijo DNS específico para la conexión. . :
-   Dirección IPv6. . . . . . . . . . . . . . : 2001:1308:247a:e300:3c80:470f:cf07:15ed
-   Dirección IPv6 temporal. . . . . . . . . . : 2001:1308:252b:8900::4
-   Vínculo: dirección IPv6 local. . . . . . . : fe80::3c80:470f:cf07:15ed%11
-   Dirección IPv4. . . . . . . . . . . . . . : 10.0.0.176
-   Máscara de subred . . . . . . . . . . . . : 255.255.255.0
-   Puerta de enlace predeterminada . . . . . : fe80::e6f0:4ff:fe83:b370%11
-                                               10.0.0.1
-4. 📝 Guía para Subrayar en la Imagen y Definición de Campos
-🔴 [Subrayar] Adaptador de Ethernet Ethernet:
-
-Qué es: Muestra la interfaz o tarjeta de red física por cable utilizada en la máquina.
-
-Confidencialidad: 🟢 No confidencial. Es un identificador del sistema local.
-
-🔴 [Subrayar] Sufijo DNS específico para la conexión:
-
-Qué es: Nombre del dominio asignado a tu red local por el proveedor (ISP) o router.
-
-Confidencialidad: ⚠️ Sensible. Puede revelar el nombre del dominio de una empresa.
-
-🔴 [Subrayar] Dirección IPv6:
-
-Qué es: La dirección IP pública única global en formato IPv6 para salir a Internet.
-
-Confidencialidad: 🚨 CONFIDENCIAL. Identifica de forma única a tu equipo en todo el planeta. Exponerla puede facilitar ataques directos.
-
-🔴 [Subrayar] Dirección IPv6 temporal:
-
-Qué es: Una dirección IPv6 secundaria rotativa que protege la privacidad del usuario al navegar.
-
-Confidencialidad: ⚠️ Sensible. Aunque cambia con frecuencia, expone tu tráfico activo.
-
-🔴 [Subrayar] Vínculo: dirección IPv6 local (Link-Local):
-
-Qué es: IP privada en formato IPv6 (suele empezar por fe80::) que solo sirve para que los equipos de una misma red local se comuniquen entre sí.
-
-Confidencialidad: 🟢 No confidencial. No es accesible a través de Internet.
-
-🔴 [Subrayar] Dirección IPv4:
-
-Qué es: Identificador numérico privado de tu computadora en la red de tu casa o trabajo (ejemplo: 10.0.0.176).
-
-Confidencialidad: 🟢 No confidencial / Bajo riesgo. Son direcciones privadas no enrutables en Internet.
-
-🔴 [Subrayar] Máscara de subred:
-
-Qué es: Código (255.255.255.0) que delimita el tamaño de la red local y separa la parte de red de la de los equipos.
-
-Confidencialidad: 🟢 No confidencial. Estándar universal.
-
-🔴 [Subrayar] Puerta de enlace predeterminada:
-
-Qué es: La dirección IP del router (10.0.0.1). Es la salida principal hacia Internet.
-
-Confidencialidad: 🟢 No confidencial.
+1.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial / Sensible.
+* Razón de Ciberseguridad: Proporciona la infraestructura base requerida por un atacante en la fase de reconocimiento activo. Permite identificar la subred objetivo, la existencia de servidores DNS maliciosos (DNS Hijacking) o adaptadores virtuales no autorizados instalados por troyanos.

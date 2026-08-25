@@ -1,0 +1,25 @@
+===============================================================================
+7. COMANDO: net localgroup <grupo> /comment:"<descripción>"
+===============================================================================
+
+7.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Agrega o modifica la descripción/comentario explicativo asociado a un grupo local de seguridad para auditoría interna o documentación del sistema.
+
+7.2. SINTAXIS EXACTA:
+net localgroup Auditores /comment:"Grupo para personal externo de auditoria forense"
+
+7.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup Auditores /comment:"Grupo para personal  |
+| externo de auditoria forense"                                               |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+7.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* <grupo>: Nombre del grupo local al cual se le actualizará la información.
+* /comment:"<descripción>": Flag que almacena la cadena textual de descripción dentro del objeto del grupo.
+
+7.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial Bajo.
+* Razón de Ciberseguridad: Los atacantes pueden usar descripciones falsas o engañosas (Social Engineering / Camuflaje) para que un grupo malicioso recién creado parezca un servicio legítimo del sistema operativo ante auditorías del SOC.

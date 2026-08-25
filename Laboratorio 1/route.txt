@@ -1,0 +1,36 @@
+===============================================================================
+8. COMANDO: route print
+===============================================================================
+
+8.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Muestra y permite manipular la tabla de enrutamiento IP del núcleo de Windows. Determina de forma matemática la métrica y la interfaz exacta por donde se transmitirá un paquete de datos dependiendo de su red destino.
+
+8.2. SINTAXIS EXACTA:
+route print
+
+8.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>route print                                                  |
+|                                                                             |
+|===========================================================================  |
+| Lista de interfaces                                                         |
+|  3...c4 65 16 xx xx xx ......Realtek Wi-Fi Adapter                          |
+|===========================================================================  |
+| Tabla de rutas IPv4                                                         |
+|===========================================================================  |
+| Rutas activas:                                                              |
+| Destino de red        Máscara de red          Puerta de enlace   Interfaz Métrica |
+|        0.0.0.0               0.0.0.0       192.168.1.1     192.168.1.15     35 |
+|      127.0.0.0             255.0.0.0             En enlace       127.0.0.1    331 |
+|===========================================================================  |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+8.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* print: Subcomando que fuerza la impresión en pantalla de las tablas IPv4 e IPv6.
+* Destino de red 0.0.0.0: Representa la ruta por defecto (Quad-Zero Route) utilizada para salir hacia Internet.
+* Métrica: Valor numérico que determina la prioridad de la ruta (a menor costo/métrica, mayor prioridad de selección).
+
+8.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Altamente Confidencial.
+* Razón de Ciberseguridad: La inyección de rutas maliciosas (Route Poisoning) permite a un atacante que haya comprometido la máquina desviar el tráfico de redes corporativas o VPNs hacia su propia IP para interceptar datos confidenciales.

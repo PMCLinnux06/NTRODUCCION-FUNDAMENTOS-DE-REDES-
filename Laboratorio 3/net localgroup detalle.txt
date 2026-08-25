@@ -1,0 +1,34 @@
+===============================================================================
+2. COMANDO: net localgroup <grupo>
+===============================================================================
+
+2.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Inspecciona un grupo local específico y muestra su comentario explicativo junto con la lista completa de miembros (usuarios o cuentas del dominio/locales) que forman parte de él.
+
+2.2. SINTAXIS EXACTA:
+net localgroup Administradores
+
+2.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup Administradores                          |
+|                                                                             |
+| Nombre de grupo local   Administradores                                     |
+| Comentario              Los administradores tienen acceso completo e        |
+|                         irrestricto al equipo o dominio                     |
+|                                                                             |
+| Miembros                                                                    |
+| --------------------------------------------------------------------------- |
+| Administrator                                                               |
+| PmcLi                                                                       |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+2.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* <grupo>: Nombre exacto del grupo local a auditar.
+* Comentario: Descripción breve de la función del grupo en el sistema.
+* Miembros: Lista explícita de cuentas con privilegios asociados a este grupo.
+
+2.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial / Sensible.
+* Razón de Ciberseguridad: Revela de forma directa las cuentas con permisos críticos. Un atacante consultará el grupo "Administradores" o "Usuarios del escritorio remoto" para identificar qué usuarios comprometer mediante movimiento lateral.

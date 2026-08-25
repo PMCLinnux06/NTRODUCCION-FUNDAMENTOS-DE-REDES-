@@ -1,0 +1,24 @@
+===============================================================================
+3. COMANDO: net localgroup <grupo> /add
+===============================================================================
+
+3.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Crea un nuevo grupo local de seguridad en la base de datos SAM (Security Account Manager) del sistema local.
+
+3.2. SINTAXIS EXACTA:
+net localgroup Auditores /add
+
+3.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup Auditores /add                           |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+3.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* <grupo>: Nombre del nuevo grupo a ser registrado en el sistema.
+* /add: Modificador ejecutable que solicita la creación de la nueva entidad de seguridad.
+
+3.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Altamente Confidencial / Modificación de Sistema.
+* Razón de Ciberseguridad: Requiere privilegios elevados (Elevated Admin). Los atacantes pueden crear grupos secundarios no monitoreados para asignar permisos y establecer persistencia sigilosa.

@@ -1,0 +1,64 @@
+===============================================================================
+2. COMANDO: net user [NombreUsuario]
+===============================================================================
+
+2.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Sirve para realizar una inspección profunda y detallada de los atributos de una cuenta de usuario en particular. Muestra las directivas de seguridad aplicadas, el estado de la contraseña, la caducidad del perfil y los grupos de seguridad locales a los que pertenece el usuario.
+
+2.2. SINTAXIS EXACTA:
+net user PmcLi
+
+2.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>net user PmcLi                                               |
+|                                                                             |
+| Nombre de usuario                    PmcLi                                  |
+| Nombre completo                      Pedro Contreras                        |
+| Comentario                           Cuenta de administración principal     |
+| Comentarios del usuario                                                     |
+| Código de país/región                000 (Predeterminado del sistema)      |
+| Cuenta activa                        Sí                                     |
+| La cuenta caduca                     Nunca                                  |
+|                                                                             |
+| La contraseña se estableció por última vez 15/07/2026 10:30:00 a.m.        |
+| La contraseña caduca                 Nunca                                  |
+| Contraseña cambiable                 15/07/2026 10:30:00 a.m.               |
+| Contraseña requerida                 Sí                                     |
+| El usuario puede cambiar la contraseña Sí                                   |
+|                                                                             |
+| Estaciones de trabajo permitidas     Todas                                  |
+| Script de inicio de sesión                                                  |
+| Perfil de usuario                                                           |
+| Directorio principal                                                        |
+| Último inicio de sesión              23/08/2026 08:15:00 p.m.               |
+|                                                                             |
+| Horas permitidas de inicio de sesión  Todas                                 |
+|                                                                             |
+| Miembros del grupo local             *Administradores                       |
+| Miembros del grupo global            *Ninguno                               |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+2.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* Nombre de usuario: Muestra el identificador NetBIOS/SAM de la cuenta (`PmcLi`).
+* Nombre completo: Identidad real asociada al usuario (`Pedro Contreras`).
+* Comentario: Descripción adicional sobre la función o rol del usuario en la organización.
+* Código de país/región: Configuración regional del idioma y teclado asignado a la cuenta.
+* Cuenta activa: Muestra `Sí` o `No`. Determina si el usuario tiene permitido autenticarse o si la cuenta está bloqueada/deshabilitada.
+* La cuenta caduca: Muestra la fecha límite en la que la cuenta dejará de funcionar automáticamente. Si dice `Nunca`, el perfil no vence.
+* La contraseña se estableció por última vez: Marca de tiempo exacta (fecha y hora) de la última modificación de la credencial.
+* La contraseña caduca: Muestra la fecha en que la política de seguridad exigirá cambiar la contraseña.
+* Contraseña cambiable: Fecha a partir de la cual el usuario tiene permitido realizar un nuevo cambio de contraseña (evita cambios masivos inmediatos).
+* Contraseña requerida: Indica si el sistema operativo exige obligatoriamente tener una clave configurada para iniciar sesión.
+* El usuario puede cambiar la contraseña: Muestra si el usuario tiene permiso para actualizar su clave o si le ha sido bloqueado dicho derecho.
+* Estaciones de trabajo permitidas: Equipos específicos desde los cuales la cuenta tiene autorización para iniciar sesión.
+* Script de inicio de sesión: Ruta del archivo ejecutable o script (`.bat`/`.ps1`) que se corre automáticamente al autenticarse.
+* Perfil de usuario / Directorio principal: Rutas de carpetas personalizadas y almacenamiento de red asignados al usuario.
+* Último inicio de sesión: Registro auditado del último momento en que la cuenta autenticó exitosamente en el sistema.
+* Horas permitidas de inicio de sesión: Ventana de tiempo permitida por directiva para conectar el usuario.
+* Miembros del grupo local: Grupos de seguridad locales del equipo a los que pertenece el usuario (ejemplo: `*Administradores`).
+
+2.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: CONFIDENCIAL / ALTO.
+* Razón de Ciberseguridad: Expone la pertenencia a grupos privileged (`*Administradores`), la antigüedad de las contraseñas y las fechas de último inicio de sesión. Esta información permite a un atacante identificar cuentas inactivas o cuentas con directivas débiles (como contraseñas que nunca caducan) para comprometerlas.

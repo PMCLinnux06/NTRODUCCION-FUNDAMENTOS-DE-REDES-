@@ -1,0 +1,30 @@
+===============================================================================
+14. COMANDO: net user [Usuario] *
+===============================================================================
+
+14.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Permite cambiar la contraseña de un usuario mediante una entrada interactiva y oculta, evitando que los caracteres de la clave queden grabados en la pantalla de la consola o en el historial.
+
+14.2. SINTAXIS EXACTA:
+net user Juan *
+
+14.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net user Juan *                                         |
+| Escriba una contraseña para el usuario:                                     |
+| Vuelva a escribir la contraseña para confirmarla:                           |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+14.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+
+* *:
+  - Parámetro especial que activa el modo de entrada confidencial/enmascarada.
+
+* Escriba una contraseña para el usuario:
+  - Prompt interactivo de seguridad. Los caracteres tecleados no se muestran visualmente para evitar el ataque de espionaje sobre el hombro ("Shoulder Surfing").
+
+14.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Práctica Segura Recomendada.
+* Razón de Ciberseguridad: Es el estándar seguro para la gestión manual de contraseñas por línea de comandos.

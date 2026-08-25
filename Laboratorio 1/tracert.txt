@@ -1,30 +1,32 @@
-Comando: tracert
-1. ¿Qué es y para qué sirve?
-Muestra la ruta exactas y los saltos (routers intermedios) que recorre la información desde tu computadora hasta llegar a un servidor de destino en Internet o en la red local.
+===============================================================================
+3. COMANDO: tracert [destino]
+===============================================================================
 
-2. Variaciones del comando:
-tracert [IP o Dominio]: Trazado de ruta estándar (ejemplo: tracert google.com).
+3.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Determina el camino físico y la topología de red intermedia hacia un destino enviando paquetes ICMP con valores TTL incrementales (empezando en 1). Cada router intermedio descuenta el TTL y, al llegar a 0, devuelve un paquete ICMP "Time Exceeded", revelando la IP de dicho salto.
 
-tracert -d [IP]: Realiza el trazado sin traducir las direcciones IP a nombres de dominio (hace la prueba más rápida).
+3.2. SINTAXIS EXACTA:
+tracert -d 8.8.8.8
 
-tracert -h [MáximoSaltos]: Define el límite máximo de saltos que buscará antes de detenerse.
+3.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>tracert -d 8.8.8.8                                           |
+|                                                                             |
+| Traza a la dirección 8.8.8.8 sobre un máximo de 30 saltos:                  |
+|   1     2 ms     1 ms     1 ms  192.168.1.1                                 |
+|   2    14 ms    12 ms    13 ms  10.0.0.1                                    |
+|   3    18 ms    17 ms    19 ms  8.8.8.8                                     |
+|                                                                             |
+| Traza completa.                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
 
+3.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* tracert: Comando de trazado de rutas de capa de red.
+* -d: Parámetro de optimización que desactiva la resolución inversa de nombres (PTR) para evitar demoras por consultas DNS.
+* Saltos 1..N: Lista secuencial de enrutadores atravesados por el paquete.
+* Tres columnas de tiempo (ms): Mediciones independientes de latencia para evaluar la estabilidad del enlace en cada nodo.
 
-4. 📝 Desglose de lo subrayado y Confidencialidad:
-🔴 Trazado a la dirección [Dominio / IP]:
-
-Qué es: Muestra el objetivo hacia donde se está midiendo la ruta.
-
-Confidencialidad: 🟢 No confidencial.
-
-🔴 Saltos (Líneas 1, 2, 3...):
-
-Qué es: El número de salto representa cada router o nodo intermediario en el camino. Los ms indican la latencia en 3 intentos.
-
-Confidencialidad: ⚠️ Sensible. Las primeras líneas pueden revelar IP internas de tu proveedor o de la red de tu empresa.
-
-🔴 Traza completa:
-
-Qué es: Confirmación de que el paquete llegó con éxito al servidor final.
-
-Confidencialidad: 🟢 No confidencial.
+3.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Confidencial Medio.
+* Razón de Ciberseguridad: Es una herramienta fundamental de mapas de infraestructura (Network Mapping). Muestra la arquitectura interna del ISP, la presencia de routers intermedios y posibles puntos de falla o de interceptación de tráfico (Man-in-the-Middle en la infraestructura).

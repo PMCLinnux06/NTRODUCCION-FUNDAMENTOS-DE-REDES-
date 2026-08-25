@@ -1,0 +1,25 @@
+===============================================================================
+5. COMANDO: net localgroup <grupo> <usuario> /add
+===============================================================================
+
+5.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Añade una cuenta de usuario específica (local o del dominio) como miembro de un grupo local, heredando automáticamente todos los privilegios asociados a dicho grupo.
+
+5.2. SINTAXIS EXACTA:
+net localgroup Administradores Juan /add
+
+5.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Windows\system32>net localgroup Administradores Juan /add               |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
+
+5.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* <grupo>: El grupo destino al cual se le agregará el usuario.
+* <usuario>: Nombre de la cuenta de usuario que se incorporará al grupo.
+* /add: Parámetro que confirma la relación de membrecía.
+
+5.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: Crítico / Escalada de Privilegios.
+* Razón de Ciberseguridad: Es una de las técnicas más comunes de escalada local de privilegios. Si un atacante compromete una cuenta sin privilegios (ej. `Juan`) y logra ejecutar este comando agregándola a `Administradores`, toma control total de la máquina.

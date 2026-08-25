@@ -1,30 +1,33 @@
-Comando: nslookup
-1. ¿Qué es y para qué sirve?
-Consulta a los servidores DNS para resolver y verificar la dirección IP que corresponde a un nombre de dominio o viceversa.
+===============================================================================
+4. COMANDO: nslookup [dominio]
+===============================================================================
 
-2. Variaciones del comando:
-nslookup [Dominio]: Consulta simple para obtener la IP de un sitio web.
+4.1. ¿PARA QUÉ SIRVE ESTE COMANDO?
+Consulta directamente la base de datos de los servidores DNS (Domain Name System) para verificar la resolución de nombres de dominio en direcciones IP y auditar la integridad de registros específicos (A, AAAA, MX, NS, TXT, CNAME).
 
-nslookup [Dirección IP]: Realiza una búsqueda inversa para saber qué dominio le pertenece a esa IP.
+4.2. SINTAXIS EXACTA:
+nslookup github.com
 
-nslookup (solo): Entra al modo interactivo para hacer múltiples consultas continuas.
+4.3. CAPTURA DE PANTALLA SIMULADA DE CONSOLA (OUTPUT):
++-----------------------------------------------------------------------------+
+| C:\Users\PmcLi>nslookup github.com                                          |
+|                                                                             |
+| Servidor:  UnKnown                                                          |
+| Address:   192.168.1.1                                                      |
+|                                                                             |
+| Respuesta no autoritativa:                                                  |
+| Nombre:    github.com                                                       |
+| Addresses: 140.82.121.4                                                     |
+|                                                                             |
+| Se ha completado el comando correctamente.                                  |
++-----------------------------------------------------------------------------+
 
+4.4. DESGLOSE DETALLADO Y EXPLICACIÓN DE CADA CAMPO MOSTRADO:
+* nslookup: Aplicación cliente de administración y diagnóstico de DNS.
+* Servidor / Address: IP del servidor DNS local que procesa la consulta iterativa o recursiva.
+* Respuesta no autoritativa: Indica que el servidor consultado obtuvo la respuesta de su memoria caché y no es la autoridad primaria de esa zona.
+* Addresses: Registros del tipo A que devuelven las IPs públicas asignadas a dicho dominio.
 
-4. 📝 Desglose de lo subrayado y Confidencialidad:
-🔴 Servidor / Address (Sección Superior):
-
-Qué es: Es la dirección IP de tu servidor DNS local (habitualmente tu router o servidor DNS asignado).
-
-Confidencialidad: 🟢 No confidencial.
-
-🔴 Respuesta no autoritativa:
-
-Qué es: Indica que la respuesta proviene de la memoria caché guardada en el servidor DNS y no directamente del servidor DNS raíz de la web.
-
-Confidencialidad: 🟢 No confidencial.
-
-🔴 Nombre y Addresses (Sección Inferior):
-
-Qué es: El nombre de la página web consultada y la IP pública real donde está alojada en Internet.
-
-Confidencialidad: 🟢 No confidencial.
+4.5. ANÁLISIS DE CONFIDENCIALIDAD Y CIBERSEGURIDAD:
+* Nivel de Riesgo: No confidencial.
+* Razón de Ciberseguridad: Utilizado para verificar vulnerabilidades como el DNS Cache Poisoning, validar la firma de seguridad DNSSEC y detectar técnicas de evasión de Malware mediante DGA (Domain Generation Algorithms) o DNS Tunneling.
